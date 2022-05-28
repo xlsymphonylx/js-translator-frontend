@@ -27,7 +27,7 @@ function NavbarMain() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="/translation">Traducción</Nav.Link>
-            <Nav.Link href="#examples">Ejemplos</Nav.Link>
+            <Nav.Link href="/exercises">Ejercicios</Nav.Link>
             <Nav.Link className="text-danger" onClick={() => logout()}>
               Cerrar Sesión
             </Nav.Link>

@@ -1,15 +1,24 @@
 import React from "react";
 
-function TranslateAreas({ setCode, code, placeholder, label }) {
+function TranslateArea({
+  setCode,
+  debounce,
+  code,
+  placeholder,
+  label,
+  disabled,
+}) {
   return (
     <div className="form-floating">
       <textarea
         spellCheck={false}
         className="form-control bg-dark text-light"
+        onChange={debounce}
+        readOnly={disabled}
         placeholder={placeholder}
         style={{ minHeight: "30rem", padding: "2rem" }}
         value={code}
-        onInput={(event) => setCode(event.target.value)}
+        onInput={(event) => (setCode ? setCode(event.target.value) : null)}
       ></textarea>
       <label htmlFor="floatingTextarea" className=" text-light">
         {label}
@@ -18,4 +27,4 @@ function TranslateAreas({ setCode, code, placeholder, label }) {
   );
 }
 
-export default TranslateAreas;
+export default TranslateArea;

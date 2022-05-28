@@ -11,7 +11,29 @@ export const swalSuccess = async (text) => {
     showConfirmButton: false,
   });
 };
-
+export const swalWarning = async (text) => {
+  await MySwal.fire({
+    icon: "warning",
+    titleText: "Advertencia!",
+    text: text,
+    timer: 2000,
+    showConfirmButton: false,
+  });
+};
+export const swalDecision = async (text, callback) => {
+  await MySwal.fire({
+    title: "Estas Seguro?",
+    showCancelButton: true,
+    confirmButtonColor: "green",
+    text: text,
+    confirmButtonText: "Aceptar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      callback();
+    }
+  });
+};
 export const swalError = async (text) => {
   await MySwal.fire({
     icon: "error",
